@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Report Card</title>
+<style>
+h1{
+color:Grey;
+}
+table{
+border-spacing:5px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+<h1>Report Card</h1>
+</head>
+<body>
+<table  id="table" style="width:30%">
+<tr>
+   <th>Subject</th>
+   <th>Marks(50)</th>
+</tr>
+<tr>
+    <td>Analog Communication</td>
+    <td>43</td>
+</tr>
+<tr>
+    <td>Signals And System</td>
+    <td>48</td>
+</tr>
+<tr>
+    <td>Linear Integrated Circuits</td>
+    <td>41</td>
+</tr>
+<tr>
+    <td>Complex Variable Distrubution</td>
+    <td>42</td>
+</tr>
+<tr>
+    <td>Microcontroller</td>
+    <td>49</td>
+</tr>
+<tr>
+    <td>CMOS</td>
+    <td>45</td>
+</tr>
+
+</table>
+<span id="val"></span>
+        
+        <script>
+            
+            var table = document.getElementById("table"), avgVal, sumVal = 0, 
+                        rowCount = table.rows.length - 1;
+            
+            for(var i = 1; i < table.rows.length; i++)
+            {
+                sumVal = sumVal + parseInt(table.rows[i].cells[1].innerHTML);
+
+            }
+             
+            document.getElementById("val").innerHTML = "Average Value = " + parseInt(sumVal / rowCount);
+            
+        </script>
+</body>
+</html>
+    
